@@ -6,3 +6,8 @@ then
     echo -e "${RED}ERR! Guard expects a path to scan${NOCOLOR}"
     exit 2
 fi
+if [ ! -d $1 ]
+then
+    echo -e "${RED}ERR! Given directory is invalid${NOCOLOR}"
+    exit 2
+fi
