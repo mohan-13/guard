@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[4;33m'
 
 scanRepo(){
-    git -P grep --heading -f ~/Desktop/AWSTrial/assignment/patterns.yml
+    git -P grep --heading -f ~/.guard/patterns.yml
 }
 
 if [ $# == 0 ]
