@@ -11,3 +11,7 @@ then
     echo -e "${RED}ERR! Given directory is invalid${NOCOLOR}"
     exit 2
 fi
+
+
+gitRepos=$(find $1 -type d -name .git)
+gitRepos=(${gitRepos//".git"/ })
