@@ -36,6 +36,7 @@ echo -e "${YELLOW}Starting scan for secrets inside repositories.....${NOCOLOR}"
 hasSecrets=0
 for repo in "${gitRepos[@]}";
 do
+    echo -e "${GREEN} Scanning inside $repo repository....${NOCOLOR}"
     cd $repo
     scanRepo
     scanResult=$?
