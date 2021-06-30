@@ -21,7 +21,13 @@ fi
 
 echo -e "${YELLOW}Scanning for Git Repos inside $1 ............${NOCOLOR}"
 
-gitRepos=$(find $1 -type d -name .git)
+inputDir=$1
+if [ $1 == '.' ]
+then
+    inputDir=$PWD
+fi
+
+gitRepos=$(find $inputDir -type d -name .git)
 gitRepos=(${gitRepos//".git"/ })
 
 echo -e "${GREEN}Found ${#gitRepos[@]} git repositories.${NOCOLOR}"
@@ -37,7 +43,7 @@ do
     then
         hasSecrets=1
     fi
-    cd $1
+    cd $inputDir
 done
 
 if [ $hasSecrets == 0 ]
